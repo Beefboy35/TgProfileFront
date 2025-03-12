@@ -10,8 +10,11 @@
   },
   "dependencies": {
     "@component-hook/picker": "^1.0.1",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/vue-fontawesome": "^3.0.8",
     "animate.css": "^4.1.1",
     "axios": "^1.8.2",
+    "pinia": "^3.0.1",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0",
     "vue3-datepicker": "^0.4.0"

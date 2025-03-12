@@ -1,14 +1,22 @@
 <script setup lang="ts">
+import { ref, onMounted } from 'vue';
 
+
+const shareLink = ref<string>("");
+
+onMounted(async () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const newTelegramId = urlParams.get('telegramId');
+  if (newTelegramId) {
+    localStorage.setItem('telegramId', newTelegramId);
+    shareLink.value = `/${newTelegramId}`
+  }
+});
 </script>
 
 <template>
-    <nav class="flex flex-row items-center justify-center p-4 bg-purple-400 text-black text-xl font-bold">
-      <router-link to="/" class=" mr-20">Home</router-link>
-      <router-link to="/share" class="">Share</router-link>
-    </nav>
+  <nav class="hidden">
+    <router-link to="/" class="material-icons mr-20">home</router-link>
+    <router-link :to="shareLink" class="material-icons">share</router-link>
+  </nav>
 </template>
-
-<style scoped lang="ts">
-
-</style>
