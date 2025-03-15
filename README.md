@@ -1,5 +1,7 @@
-# Vue 3 + TypeScript + Vite
-
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
-
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+<p>Фронт предназначен для тг miniApp но его можно оценить и в браузере</p>
+<ol>Команды в CLI для запуска:
+<li>npm install</li>
+<li>npm run dev</li>
+<li>Переходим по хосту. e.g:(http://localhost:5174)</li>
+<li>Чтобы перейти на вторуб страницу добавляем в url любой символ. e.g:(http://localhost:5174/123)/li>
+</ol>

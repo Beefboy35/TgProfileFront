@@ -1,15 +1,16 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
+import { useUserStore } from '../stores/userStore';
 
+const userStore = useUserStore();
+const shareLink = ref<string>('');
 
-const shareLink = ref<string>("");
-
-onMounted(async () => {
+onMounted(() => {
   const urlParams = new URLSearchParams(window.location.search);
   const newTelegramId = urlParams.get('telegramId');
   if (newTelegramId) {
-    localStorage.setItem('telegramId', newTelegramId);
-    shareLink.value = `/${newTelegramId}`
+    userStore.setTelegramId(newTelegramId);
+    shareLink.value = `/${newTelegramId}`;
   }
 });
 </script>
