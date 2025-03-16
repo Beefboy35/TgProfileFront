@@ -72,12 +72,12 @@ const continueToNextStep = async (): Promise<void> => {
     userStore.setBirthDate(selectedDay.value, selectedMonth.value, selectedYear.value);
     userStore.setStatusMessage(response.data); // Используем метод из хранилища
     setTimeout(() => {
-      userStore.setStatusMessage(null);
+      userStore.setStatusMessage("");
       router.push(`/${userStore.telegramId}`);
     }, 3000);
   } catch (error) {
     userStore.setStatusMessage(error instanceof Error ? 'Error: ' + error.message : 'An unknown error occurred');
-    setTimeout(() => userStore.setStatusMessage(null), 3000);
+    setTimeout(() => userStore.setStatusMessage(""), 3000);
   }
 };
 
@@ -88,7 +88,7 @@ onMounted(() => {
     userStore.setTelegramId(newTelegramId);
   } else if (!userStore.telegramId) {
     userStore.setStatusMessage('Something went wrong. Please sign in via our telegram bot!');
-    setTimeout(() => userStore.setStatusMessage(null), 1000);
+    setTimeout(() => userStore.setStatusMessage(""), 1000);
   }
 });
 </script>

@@ -5,10 +5,10 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   plugins: [vue()],
   server: {
-    allowedHosts: ['f813-185-193-51-54.ngrok-free.app'],
+    allowedHosts: ['44cc-185-193-51-54.ngrok-free.app'],
     proxy: {
       '/api': {
-        target: 'https://f813-185-193-51-54.ngrok-free.app',  // Проксируем бекенд запущенный в ngrok
+        target: 'https://44cc-185-193-51-54.ngrok-free.app',  // Проксируем бекенд запущенный в ngrok
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
       },

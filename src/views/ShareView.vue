@@ -64,7 +64,7 @@ const age = ref<number>(0);
 
 const daysUntilBirthday = computed(() => {
   if (!userStore.birthDate) return 'Invalid date of birth';
-  const { day, month, year } = userStore.birthDate;
+  const { day, month } = userStore.birthDate;
   const today = new Date();
   const nextBirthday = new Date(today.getFullYear(), month - 1, day);
   if (nextBirthday < today) nextBirthday.setFullYear(today.getFullYear() + 1);
